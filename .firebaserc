@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "my-portfolio-8e64f"
+  },
+  "targets": {
+    "my-portfolio-8e64f": {
+      "hosting": {
+        "ideas": [
+          "ideas-8e64f"
+        ]
+      }
+    }
+  }
+}
