@@ -24,7 +24,7 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 enableIndexedDbPersistence(db).then(() => {
-    console.info("Offline persistance enabled")
+    // console.info("Offline persistance enabled")
 }).catch((err) => {
     console.error("Error: ", err)
 });
