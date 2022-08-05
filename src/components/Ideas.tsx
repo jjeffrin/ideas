@@ -1,4 +1,4 @@
-import { Select, Text } from "@chakra-ui/react"
+import { Select } from "@chakra-ui/react"
 import { query, collection, orderBy, onSnapshot } from "@firebase/firestore"
 import { useEffect, useState } from "react"
 import { db } from "../FirebaseConfig"
