@@ -1,4 +1,4 @@
-import { Select } from "@chakra-ui/react"
+import { Select, Text } from "@chakra-ui/react"
 import { query, collection, orderBy, onSnapshot } from "@firebase/firestore"
 import { useEffect, useState } from "react"
 import { db } from "../FirebaseConfig"
@@ -23,6 +23,7 @@ export const Ideas = () => {
 
     return (
         <>
+            <Text>Secret: {process.env.FIREBASE_APPCHECK_CLIENT_KEY}</Text>
             <Select placeholder='Sort by' onChange={(e) => setSortBy(e.target.value)}>
                 <option value='votes'>Votes</option>
                 <option value='createdDate'>Last added</option>
