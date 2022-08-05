@@ -1,5 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check'
 import { getAuth } from 'firebase/auth'
 import { enableIndexedDbPersistence, getFirestore } from 'firebase/firestore'
 // import { getAnalytics } from "firebase/analytics";
@@ -19,8 +20,18 @@ const firebaseConfig = {
     measurementId: "G-L17MSSEBQ2"
 };
 
+// declare global {
+//     // eslint-disable-next-line no-var
+//     var FIREBASE_APPCHECK_DEBUG_TOKEN: boolean | string | undefined;
+// }
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+//self.FIREBASE_APPCHECK_DEBUG_TOKEN = true;
+initializeAppCheck(app, {
+    provider: new ReCaptchaV3Provider('6LeVwEwhAAAAAEfH54cXgV1Otxra5ZQVYtQMZ1my'),
+    isTokenAutoRefreshEnabled: true
+})
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 enableIndexedDbPersistence(db).then(() => {
