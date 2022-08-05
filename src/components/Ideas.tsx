@@ -23,7 +23,6 @@ export const Ideas = () => {
 
     return (
         <>
-            <Text>Secret: {process.env.FIREBASE_APPCHECK_CLIENT_KEY}</Text>
             <Select placeholder='Sort by' onChange={(e) => setSortBy(e.target.value)}>
                 <option value='votes'>Votes</option>
                 <option value='createdDate'>Last added</option>
