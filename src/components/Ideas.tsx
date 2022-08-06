@@ -21,9 +21,11 @@ export const Ideas = () => {
         }
     }, [sortBy])
 
+    const setSortByValue = (value: string): void => { if (value) setSortBy(value) }
+
     return (
         <>
-            <Select placeholder='Sort by' onChange={(e) => setSortBy(e.target.value)}>
+            <Select placeholder='Sort by' onChange={(e) => setSortByValue(e.target.value)}>
                 <option value='votes'>Votes</option>
                 <option value='createdDate'>Last added</option>
             </Select>
